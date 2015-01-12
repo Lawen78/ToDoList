@@ -29,6 +29,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Il sender in questa caso è un oggetto UISToryboardSegue con un identifier che ho impostato nell'attribute inspector nel unwind (vedi nell'interface builder i due pulsanti unwind sotto Exit della scena Aggiungi Sito
 -(IBAction)unwindToSitiTable:(UIStoryboardSegue*)segue{
     NSLog(@"Identifier:%@",[segue identifier]);
     if([[segue identifier] isEqualToString:@"cancel"]){
