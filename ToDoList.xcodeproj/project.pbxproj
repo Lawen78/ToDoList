@@ -15,6 +15,7 @@
 		ED607CA21A63C4C9007FC3B7 /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED607CA11A63C4C9007FC3B7 /* ToDoListTests.m */; };
 		ED607CAD1A63DB96007FC3B7 /* AddSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED607CAC1A63DB96007FC3B7 /* AddSiteViewController.m */; };
 		ED607CB31A63DCB8007FC3B7 /* SitiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED607CB21A63DCB8007FC3B7 /* SitiTableViewController.m */; };
+		ED607CB61A642D63007FC3B7 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED607CB51A642D63007FC3B7 /* ToDoItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		ED607CAC1A63DB96007FC3B7 /* AddSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddSiteViewController.m; path = ../AddSiteViewController.m; sourceTree = "<group>"; };
 		ED607CB11A63DCB8007FC3B7 /* SitiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SitiTableViewController.h; path = ../SitiTableViewController.h; sourceTree = "<group>"; };
 		ED607CB21A63DCB8007FC3B7 /* SitiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SitiTableViewController.m; path = ../SitiTableViewController.m; sourceTree = "<group>"; };
+		ED607CB41A642D63007FC3B7 /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
+		ED607CB51A642D63007FC3B7 /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 			children = (
 				ED607CB11A63DCB8007FC3B7 /* SitiTableViewController.h */,
 				ED607CB21A63DCB8007FC3B7 /* SitiTableViewController.m */,
+				ED607CB41A642D63007FC3B7 /* ToDoItem.h */,
+				ED607CB51A642D63007FC3B7 /* ToDoItem.m */,
 				ED607CAB1A63DB96007FC3B7 /* AddSiteViewController.h */,
 				ED607CAC1A63DB96007FC3B7 /* AddSiteViewController.m */,
 				ED607C891A63C4C9007FC3B7 /* AppDelegate.h */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED607CB31A63DCB8007FC3B7 /* SitiTableViewController.m in Sources */,
+				ED607CB61A642D63007FC3B7 /* ToDoItem.m in Sources */,
 				ED607C8B1A63C4C9007FC3B7 /* AppDelegate.m in Sources */,
 				ED607C881A63C4C9007FC3B7 /* main.m in Sources */,
 				ED607CAD1A63DB96007FC3B7 /* AddSiteViewController.m in Sources */,
