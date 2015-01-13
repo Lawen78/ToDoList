@@ -9,10 +9,13 @@
 #import "SitiTableViewController.h"
 #import "ToDoItem.h"
 #import "CustomCell.h"
+#import "myDB.h"
 
 @interface SitiTableViewController ()
 
-@property NSMutableArray *toDoItems;
+@property (nonatomic,strong) NSArray *toDoItemsFetched;
+@property (nonatomic,strong) NSMutableArray *toDoItems;
+@property (nonatomic,strong) myDB *db;
 
 @end
 
@@ -21,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.toDoItems = [[NSMutableArray alloc] init];
+    self.db = [[myDB alloc] init];
+    [self saveData];
     [self loadInitialData];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellReuseIdentifier:@"ListPrototypeCell"];
@@ -31,24 +36,52 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void)loadInitialData{
+-(void)saveData{
     ToDoItem *item1 = [[ToDoItem alloc] init];
     item1.itemName = @"Buy milk";
     item1.detail = @"dettaglio 1";
-    [self.toDoItems addObject:item1];
+    NSManagedObject *obj1 = [NSEntityDescription insertNewObjectForEntityForName:@"Evento" inManagedObjectContext:self.db.contesto];
+    [obj1 setValue:item1.itemName forKey:@"nome"];
+    [obj1 setValue:item1.detail forKey:@"descrizione"];
+    
     
     ToDoItem *item2 = [[ToDoItem alloc] init];
     item2.itemName = @"Buy eggs";
     item2.detail = @"dettaglio 2";
-
-    [self.toDoItems addObject:item2];
+    NSManagedObject *obj2 = [NSEntityDescription insertNewObjectForEntityForName:@"Evento" inManagedObjectContext:self.db.contesto];
+    [obj2 setValue:item2.itemName forKey:@"nome"];
+    [obj2 setValue:item1.detail forKey:@"descrizione"];
     
-    ToDoItem *item3 = [[ToDoItem alloc] init];
-    item3.itemName = @"Buy a book";
-    item3.detail = @"dettaglio 3";
 
-    [self.toDoItems addObject:item3];
     
+    [self.db salvaContesto];
+
+    
+}
+
+-(void)fetchObjects{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Evento"];
+    //NSError *error;
+    self.toDoItemsFetched =[[NSArray alloc] initWithArray:[self.db.contesto executeFetchRequest:fetchRequest error:nil]];
+    //self.toDoItems = [self.db.contesto executeFetchRequest:fetchRequest error:nil];
+    //NSLog(@"%@",temp);
+    //return [temp copy];
+    
+}
+
+
+-(void)loadInitialData{
+    [self fetchObjects];
+    for(NSManagedObject *obj in self.toDoItemsFetched){
+        ToDoItem *toDoItem = [[ToDoItem alloc] init];
+       
+        toDoItem.itemName = [obj valueForKey:@"nome"];
+        toDoItem.detail = [obj valueForKey:@"descrizione"];
+        
+        [self.toDoItems addObject:toDoItem];
+    }
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,8 +120,11 @@
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    NSLog(@"%@",[self.toDoItems objectAtIndex:indexPath.row]);
+    ToDoItem *toDoItem  = [self.toDoItems objectAtIndex:indexPath.row];
+    //toDoItem.itemName = [obj valueForKey:@"nome"];
+    //toDoItem.detail = [obj valueForKey:@"descrizione"];
     
-    ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
     //NSLog(@"%ld",indexPath.row);
     //cell.textLabel.text = toDoItem.itemName;
     CustomCell *cella = ((CustomCell*) [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath]);
@@ -158,7 +194,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     NSLog(@"click:%ld",indexPath.row);
-    ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
+    ToDoItem *tappedItem  = [self.toDoItems objectAtIndex:indexPath.row];
+    //tappedItem.itemName = [obj valueForKey:@"nome"];
+    //tappedItem.detail = [obj valueForKey:@"descrizione"];
+
     tappedItem.completed = !tappedItem.completed;
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }

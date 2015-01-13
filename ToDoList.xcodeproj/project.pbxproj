@@ -19,6 +19,8 @@
 		EDA854951A65285600A78879 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA854931A65285600A78879 /* CustomCell.m */; };
 		EDA854961A65285600A78879 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA854941A65285600A78879 /* CustomCell.xib */; };
 		EDA854981A652BB200A78879 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA854971A652BB200A78879 /* Icon.png */; };
+		EDA8549B1A653B6000A78879 /* Eventi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDA854991A653B6000A78879 /* Eventi.xcdatamodeld */; };
+		EDA8549E1A653BD500A78879 /* myDB.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA8549D1A653BD500A78879 /* myDB.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		EDA854931A65285600A78879 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCell.m; path = ../CustomCell.m; sourceTree = "<group>"; };
 		EDA854941A65285600A78879 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCell.xib; path = ../CustomCell.xib; sourceTree = "<group>"; };
 		EDA854971A652BB200A78879 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		EDA8549A1A653B6000A78879 /* Eventi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eventi.xcdatamodel; sourceTree = "<group>"; };
+		EDA8549C1A653BD500A78879 /* myDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myDB.h; sourceTree = "<group>"; };
+		EDA8549D1A653BD500A78879 /* myDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myDB.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +111,9 @@
 				ED607C891A63C4C9007FC3B7 /* AppDelegate.h */,
 				ED607C8A1A63C4C9007FC3B7 /* AppDelegate.m */,
 				ED607C8F1A63C4C9007FC3B7 /* Main.storyboard */,
+				EDA854991A653B6000A78879 /* Eventi.xcdatamodeld */,
+				EDA8549C1A653BD500A78879 /* myDB.h */,
+				EDA8549D1A653BD500A78879 /* myDB.m */,
 				ED607C921A63C4C9007FC3B7 /* Images.xcassets */,
 				ED607C941A63C4C9007FC3B7 /* LaunchScreen.xib */,
 				ED607C851A63C4C8007FC3B7 /* Supporting Files */,
@@ -243,9 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED607CB31A63DCB8007FC3B7 /* SitiTableViewController.m in Sources */,
+				EDA8549B1A653B6000A78879 /* Eventi.xcdatamodeld in Sources */,
 				ED607CB61A642D63007FC3B7 /* ToDoItem.m in Sources */,
 				EDA854951A65285600A78879 /* CustomCell.m in Sources */,
 				ED607C8B1A63C4C9007FC3B7 /* AppDelegate.m in Sources */,
+				EDA8549E1A653BD500A78879 /* myDB.m in Sources */,
 				ED607C881A63C4C9007FC3B7 /* main.m in Sources */,
 				ED607CAD1A63DB96007FC3B7 /* AddSiteViewController.m in Sources */,
 			);
@@ -452,6 +462,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EDA854991A653B6000A78879 /* Eventi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EDA8549A1A653B6000A78879 /* Eventi.xcdatamodel */,
+			);
+			currentVersion = EDA8549A1A653B6000A78879 /* Eventi.xcdatamodel */;
+			path = Eventi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ED607C7A1A63C4C8007FC3B7 /* Project object */;
 }
