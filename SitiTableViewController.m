@@ -8,6 +8,7 @@
 
 #import "SitiTableViewController.h"
 #import "ToDoItem.h"
+#import "CustomCell.h"
 
 @interface SitiTableViewController ()
 
@@ -21,6 +22,8 @@
     [super viewDidLoad];
     self.toDoItems = [[NSMutableArray alloc] init];
     [self loadInitialData];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellReuseIdentifier:@"ListPrototypeCell"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -31,17 +34,19 @@
 -(void)loadInitialData{
     ToDoItem *item1 = [[ToDoItem alloc] init];
     item1.itemName = @"Buy milk";
-    
+    item1.detail = @"dettaglio 1";
     [self.toDoItems addObject:item1];
     
     ToDoItem *item2 = [[ToDoItem alloc] init];
     item2.itemName = @"Buy eggs";
-    
+    item2.detail = @"dettaglio 2";
+
     [self.toDoItems addObject:item2];
     
     ToDoItem *item3 = [[ToDoItem alloc] init];
     item3.itemName = @"Buy a book";
-    
+    item3.detail = @"dettaglio 3";
+
     [self.toDoItems addObject:item3];
     
 }
@@ -79,21 +84,28 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     
     // Configure the cell...
     
     ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
     //NSLog(@"%ld",indexPath.row);
-    cell.textLabel.text = toDoItem.itemName;
+    //cell.textLabel.text = toDoItem.itemName;
+    CustomCell *cella = ((CustomCell*) [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath]);
+    
+    cella.Titolo.text = toDoItem.itemName;
+    cella.descrizione.text = toDoItem.detail;
+    cella.immagine.image = [UIImage imageNamed:@"Icon.png"];
+    
+    //cell.detailTextLabel.text = toDoItem.detail;
     if(toDoItem.completed){
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cella.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cella.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    return cell;
+    return cella;
 }
 
 

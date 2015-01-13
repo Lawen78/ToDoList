@@ -11,6 +11,7 @@
 @interface ToDoItem : NSObject
 
 @property NSString *itemName;
+@property NSString *detail;
 @property BOOL completed;
 @property (readonly) NSDate *creationDate;
 

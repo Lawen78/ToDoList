@@ -16,6 +16,9 @@
 		ED607CAD1A63DB96007FC3B7 /* AddSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED607CAC1A63DB96007FC3B7 /* AddSiteViewController.m */; };
 		ED607CB31A63DCB8007FC3B7 /* SitiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED607CB21A63DCB8007FC3B7 /* SitiTableViewController.m */; };
 		ED607CB61A642D63007FC3B7 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED607CB51A642D63007FC3B7 /* ToDoItem.m */; };
+		EDA854951A65285600A78879 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA854931A65285600A78879 /* CustomCell.m */; };
+		EDA854961A65285600A78879 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA854941A65285600A78879 /* CustomCell.xib */; };
+		EDA854981A652BB200A78879 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA854971A652BB200A78879 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,10 @@
 		ED607CB21A63DCB8007FC3B7 /* SitiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SitiTableViewController.m; path = ../SitiTableViewController.m; sourceTree = "<group>"; };
 		ED607CB41A642D63007FC3B7 /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
 		ED607CB51A642D63007FC3B7 /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
+		EDA854921A65285600A78879 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCell.h; path = ../CustomCell.h; sourceTree = "<group>"; };
+		EDA854931A65285600A78879 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCell.m; path = ../CustomCell.m; sourceTree = "<group>"; };
+		EDA854941A65285600A78879 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCell.xib; path = ../CustomCell.xib; sourceTree = "<group>"; };
+		EDA854971A652BB200A78879 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,9 @@
 		ED607C841A63C4C8007FC3B7 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				EDA854921A65285600A78879 /* CustomCell.h */,
+				EDA854931A65285600A78879 /* CustomCell.m */,
+				EDA854941A65285600A78879 /* CustomCell.xib */,
 				ED607CB11A63DCB8007FC3B7 /* SitiTableViewController.h */,
 				ED607CB21A63DCB8007FC3B7 /* SitiTableViewController.m */,
 				ED607CB41A642D63007FC3B7 /* ToDoItem.h */,
@@ -106,6 +116,7 @@
 		ED607C851A63C4C8007FC3B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EDA854971A652BB200A78879 /* Icon.png */,
 				ED607C861A63C4C9007FC3B7 /* Info.plist */,
 				ED607C871A63C4C9007FC3B7 /* main.m */,
 			);
@@ -211,6 +222,8 @@
 			files = (
 				ED607C911A63C4C9007FC3B7 /* Main.storyboard in Resources */,
 				ED607C961A63C4C9007FC3B7 /* LaunchScreen.xib in Resources */,
+				EDA854981A652BB200A78879 /* Icon.png in Resources */,
+				EDA854961A65285600A78879 /* CustomCell.xib in Resources */,
 				ED607C931A63C4C9007FC3B7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +244,7 @@
 			files = (
 				ED607CB31A63DCB8007FC3B7 /* SitiTableViewController.m in Sources */,
 				ED607CB61A642D63007FC3B7 /* ToDoItem.m in Sources */,
+				EDA854951A65285600A78879 /* CustomCell.m in Sources */,
 				ED607C8B1A63C4C9007FC3B7 /* AppDelegate.m in Sources */,
 				ED607C881A63C4C9007FC3B7 /* main.m in Sources */,
 				ED607CAD1A63DB96007FC3B7 /* AddSiteViewController.m in Sources */,
@@ -426,6 +440,7 @@
 				ED607CA71A63C4C9007FC3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED607CA81A63C4C9007FC3B7 /* Build configuration list for PBXNativeTarget "ToDoListTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +449,7 @@
 				ED607CAA1A63C4C9007FC3B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
