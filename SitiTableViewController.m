@@ -73,7 +73,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"%lu",[self.toDoItems count]);
+    //NSLog(@"%lu",[self.toDoItems count]);
     return [self.toDoItems count];
 }
 
@@ -84,7 +84,14 @@
     // Configure the cell...
     
     ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
+    //NSLog(@"%ld",indexPath.row);
     cell.textLabel.text = toDoItem.itemName;
+    if(toDoItem.completed){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -133,5 +140,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Table view delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSLog(@"click:%ld",indexPath.row);
+    ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
+    tappedItem.completed = !tappedItem.completed;
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
 
 @end
